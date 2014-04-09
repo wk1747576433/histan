@@ -422,6 +422,7 @@
     [self.navigationItem setBackBarButtonItem:backBtn];
     
     selectFileViewController *fileVC = [[selectFileViewController alloc] init];
+    
     [self.navigationController pushViewController:fileVC animated:YES];
     [fileVC release];
     fileVC = nil;

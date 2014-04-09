@@ -1138,15 +1138,16 @@
         }
         
         HISTANAPPAppDelegate *appDelegate1 = HISTANdelegate;
-        //保存到程序doc目录下，上传后再删除
-        
-        
+        appDelegate1.upFileNameArray = [[NSMutableArray alloc] init];
+        //保存到程序doc目录下
+
         NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
         NSString *filePath = [docPath stringByAppendingPathComponent:fileName]; //Add the file name
         [imageData writeToFile:filePath atomically:YES]; //Write the file
         //histan_NSLog(@"程序文档目录下的路径:%@",filePath);
         //将名称（带后缀名）存入“搬运工”
         [appDelegate1.upFileNameArray addObject:fileName];
+        //[appDelegate1.upFileNameArray retain];
         
         //存入相册
         NSUserDefaults *myDefault = [NSUserDefaults standardUserDefaults];
@@ -2858,7 +2859,7 @@
 }
 
 
-#pragma mark -- 每次现实之前的操作
+#pragma mark -- 每次显示之前的操作
 -(void)viewWillAppear:(BOOL)animated
 {
     @try {
@@ -2898,7 +2899,7 @@
         }
         
         if (appDelegate.upFileNameArray == nil) {
-            NSLog(@"******!!!!!!!!NIL!!!!!");
+            NSLog(@"******!!!!!!!! upFileNameArray == nil !!!!!");
         }
         
         //加入临时数据
