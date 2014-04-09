@@ -1008,7 +1008,7 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)infos
 {
     [picker dismissModalViewControllerAnimated:YES];
-    // //histan_NSLog(@"info = %@",infos);
+    //histan_NSLog(@"info = %@",info);
     
     //获取照片实例
     UIImage *image = [[infos objectForKey:UIImagePickerControllerOriginalImage] retain];
@@ -1035,26 +1035,10 @@
     HISTANAPPAppDelegate *appDelegate1 = HISTANdelegate;
     //保存到程序doc目录下，上传后再删除
     
-    //压缩图片
-    CGSize imagesize = image.size;//相片的尺寸
-    //限制尺寸
-    float ImgMaxWidth = [appDelegate1.upLoadImgMaxWidth floatValue];
-    float ImgMaxSize = [appDelegate1.upLoadImgMaxSize floatValue];
     
-    //如果图片宽度大于ImgMaxHeight，则调整尺寸
-    if (imagesize.width > ImgMaxWidth) {
-        //调整尺寸
-        imagesize.width = ImgMaxWidth;
-        imagesize.height = (imagesize.height*ImgMaxWidth/imagesize.width);
-        
-        //对图片大小进行压缩
-        image = [self imageWithImage:image scaledToSize:imagesize];
-    }
-    //否则直接进行内容大小压缩（递归压缩，至大小小于400）
-    NSData *jpgData = UIImageJPEGRepresentation(image,0.5);
-
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
     NSString *filePath = [docPath stringByAppendingPathComponent:fileName]; //Add the file name
-    [jpgData writeToFile:filePath atomically:YES]; //Write the file
+    [imageData writeToFile:filePath atomically:YES]; //Write the file
     //histan_NSLog(@"程序文档目录下的路径:%@",filePath);
     //将名称（带后缀名）存入“搬运工”
     [appDelegate1.upFileNameArray addObject:fileName];
@@ -1063,8 +1047,10 @@
     NSUserDefaults *myDefault = [NSUserDefaults standardUserDefaults];
     //保存图片名
     [myDefault setValue:fileName forKey:@"fileName"];
+    
     if (isSaveImage) //判定，避免重复保存
     {
+        NSLog(@"isSaveImage =====  true");
         //保存到相册
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
         [library writeImageToSavedPhotosAlbum:[image CGImage]
@@ -1075,7 +1061,6 @@
     [image release];
     isSaveImage = FALSE;
     
-    [_uiTableView reloadData];
     //[self viewWillAppear:YES];
 }
 
@@ -2066,10 +2051,26 @@
     NSString *contents = nil;
     //根据文件名称得到文件路径
     NSString *filePath = [docPath stringByAppendingPathComponent:fileName];
-    //histan_NSLog(@" The filePath  *********%@",filePath);
-    NSURL *url = [NSURL fileURLWithPath:filePath];
-    NSData *contentData = [NSData dataWithContentsOfURL:url];
-    //histan_NSLog(@"The contentData **********%@",contentData);
+    
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    
+    //压缩图片
+    CGSize imagesize = image.size;//相片的尺寸
+    //限制尺寸
+    float ImgMaxWidth = [appDelegate.upLoadImgMaxWidth floatValue];
+    //float ImgMaxSize = [appDelegate.upLoadImgMaxSize floatValue];
+    //如果图片宽度大于ImgMaxMaxWidth，则调整尺寸
+    float oldImgHeight = imagesize.height;
+    float oldImgWidth = imagesize.width;
+    if (oldImgWidth > ImgMaxWidth) {
+        //调整尺寸
+        imagesize.width = ImgMaxWidth;
+        imagesize.height = (imagesize.height*(ImgMaxWidth/oldImgWidth));
+        //对图片大小进行压缩
+        image = [self imageWithImage:image scaledToSize:imagesize];
+    }
+    
+    NSData *contentData = UIImageJPEGRepresentation(image, 0.1);
     //将内容加密
     contents = [[NSString alloc] initWithData:[GTMBase64 encodeData:contentData] encoding:NSUTF8StringEncoding];
     //返回加密后的字符串
