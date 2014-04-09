@@ -1,0 +1,102 @@
+//
+// Prefix header for all source files of the 'histan' target in the 'histan' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#define _IsIOS7_ ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
+//获取当前document目录
+#define docPath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/DownLoadFiles/"]
+
+//保存密码时需要的标识
+#define ServiceName @"com.hlsoft.histan"
+
+//服务器地址
+//#define webURL_Host_Test @"http://121.34.248.172:20130/api/task/api_soap.php"         //测试正式服务器地址
+#define webURL_Host @"http://oa.histan.com/api/task/api_soap.php"    //正式服务器地址
+#define xmlNameSpace @"oa.histan.com"
+
+//APP代理
+#define HISTANdelegate (HISTANAPPAppDelegate *)[[UIApplication sharedApplication]delegate]
+
+#define mainScreen_CGRect [UIScreen mainScreen].applicationFrame
+
+#define initTag 99999  //系统自定义初始的tag
+#define ServicesCenter_PageSize 20  //服务中心的每页数量
+
+//API
+#define API_User_Login_IOS @"API_User_Login_IOS"  //ios 登陆方法
+#define API_Menus @"API_Menus"                    //获取菜单
+#define API_Get_Dept @"API_Get_Dept"
+#define API_Get_Type @"API_Get_Type"
+#define API_Get_Area @"API_Get_Area"
+#define API_Get_Hand @"API_Get_Hand"
+#define API_CreateTask_insert @"API_CreateTask_insert"
+#define API_File_Upload @"API_File_Upload"
+#define API_SelectTask_Sub @"API_SelectTask_Sub"   //查询我提交的任务
+#define API_SelectTask_Hand @"API_SelectTask_Hand" //查询我处理的任务
+#define API_Get_Statistics @"API_Get_Statistics"
+#define API_selectTask_Hand_One @"API_selectTask_Hand_One"
+#define API_Get_Tec @"API_Get_Tec"
+#define API_Get_Standard @"API_Get_Standard"
+#define API_Get_Option @"API_Get_Option"
+#define API_UpdateTask @"API_UpdateTask"
+#define API_SolutionTask @"API_SolutionTask"
+#define API_EntrustTask @"API_EntrustTask"
+#define API_CommenmtTask @"API_CommenmtTask"
+#define API_Notice_Type @"API_Notice_Type"
+#define API_Notices @"API_Notices"
+#define API_Notices_Read @"API_Notices_Read"
+#define API_Read @"API_Read"
+#define API_Performance @"API_Performance"
+#define API_Task_PF @"API_Task_PF"
+#define API_About @"API_About"  //关于
+#define API_Get_Servers @"API_Get_Servers" //获取服务器路径
+#define API_DeleteTask @"API_DeleteTask"  //删除任务
+#define API_Notices_Read @"API_Notices_Read" //获取未读的信息快报
+#define API_Reset_Service @"API_Reset_Service" //重置服务中心记录
+//2014-03-20新增API
+#define API_File_Delete @"API_File_Delete" //删除附件
+#define API_Get_SerTime @"API_Get_SerTime" //获取服务预约时间段
+#define API_Set_SerTime @"API_Set_SerTime" //设置服务预约时间段
+
+//服务中心接口
+#define API_Serivces_List @"API_Serivces_List" //获取服务列表
+#define API_Serivces_Info @"API_Serivces_Info" //功能：同用户服务详情
+#define API_Serivces_Outbound @"API_Serivces_Outbound" //功能：服务批量处理
+#define API_Service_List_Status_Count  @"API_Service_List_Status_Count"//功能：按日期获取服务统计
+
+
+//物流中心接口
+#define API_Outbound_List @"API_Outbound_List"
+#define API_Outbound_Item_List @"API_Outbound_Item_List"
+#define API_Outbound_Fail_List @"API_Outbound_Fail_List"
+#define API_Send_Fail_Reason @"API_Send_Fail_Reason"
+#define API_Dealwith_Outbound @"API_Dealwith_Outbound"
+#define API_Dealwith_Outbound_Item @"API_Dealwith_Outbound_Item"
+#define API_Outbound @"API_Outbound"
+#define API_Outbound_List_Status_Count @"API_Outbound_List_Status_Count"
+#define API_Get_Arrive @"API_Get_Arrive"
+#define API_Set_Arrived @"API_Set_Arrived"
+#define API_Reset_Outbound @"API_Reset_Outbound"
+
+#endif
+
+
+//日志打印设置
+#ifdef DEBUG
+#define debugLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() //histan_NSLog(@"%s",__func__)
+#else
+#define debugLog(...)
+#define debugMethod()
+#endif
