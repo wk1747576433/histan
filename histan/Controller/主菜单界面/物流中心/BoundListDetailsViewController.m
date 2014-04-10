@@ -274,7 +274,7 @@
     //histan_NSLog(@"加载时提取的dic:%@",dict);
     
     
-    if (indexPath.row<10) {
+    if (indexPath.row<11) {
         
         UITableViewCell *cell= [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -379,7 +379,7 @@
         curCellHeight=TaskTypeName_text2.frame.size.height+5;
         
         //如果是最后一个，则添加一个产品信息头部。
-        if(indexPath.row==9){
+        if(indexPath.row==10){
             UIImageView *imgView_Headbg=[[UIImageView alloc]initWithFrame:CGRectMake(4, curCellHeight+3, self.view.frame.size.width-9, 21)];
             [imgView_Headbg setImage:[UIImage imageNamed:@"solution_hand_bg"]];
             UILabel *TaskDescLabel=[[UILabel alloc]initWithFrame:CGRectMake((self.view.frame.size.width-30)/2-40, 1, 80, 21)];
@@ -1272,9 +1272,9 @@
         //2014-03-03:增加当前日期（appDelegate.boundList_curDate）;“商提单”（cuslading）；“方提单”（folading）
         NSDictionary *dict0 = [NSDictionary dictionaryWithObjectsAndKeys:@"curDate",@"name",@"auto",@"height",appDelegate.boundList_curDate,@"content",@"日　期：",@"leftTitle", nil];
         
-        NSDictionary *dict6 = [NSDictionary dictionaryWithObjectsAndKeys:@"cuslading",@"name",@"auto",@"height",[[appDelegate.boundList_curItemDic objectForKey:@"cuslading"] isEqualToString:@""]?@"无":[appDelegate.boundList_curItemDic objectForKey:@"cuslading"],@"content",@"商提单：",@"leftTitle", nil];
+        NSDictionary *dict7 = [NSDictionary dictionaryWithObjectsAndKeys:@"cuslading",@"name",@"auto",@"height",[[appDelegate.boundList_curItemDic objectForKey:@"cuslading"] isEqualToString:@""]?@"无":[appDelegate.boundList_curItemDic objectForKey:@"cuslading"],@"content",@"商提单：",@"leftTitle", nil];
         
-        NSDictionary *dict7 = [NSDictionary dictionaryWithObjectsAndKeys:@"folading",@"name",@"auto",@"height",[[appDelegate.boundList_curItemDic objectForKey:@"folading"] isEqualToString:@""]?@"无":[appDelegate.boundList_curItemDic objectForKey:@"folading"],@"content",@"方提单：",@"leftTitle", nil];
+        NSDictionary *dict8 = [NSDictionary dictionaryWithObjectsAndKeys:@"folading",@"name",@"auto",@"height",[[appDelegate.boundList_curItemDic objectForKey:@"folading"] isEqualToString:@""]?@"无":[appDelegate.boundList_curItemDic objectForKey:@"folading"],@"content",@"方提单：",@"leftTitle", nil];
         
         
         NSDictionary *dict1 = [NSDictionary dictionaryWithObjectsAndKeys:@"cCode",@"name",@"auto",@"height",[[appDelegate.boundList_curItemDic objectForKey:@"cCode"] isEqualToString:@""]?@"无":[appDelegate.boundList_curItemDic objectForKey:@"cCode"],@"content",@"单　号：",@"leftTitle", nil];
@@ -1283,7 +1283,7 @@
         
         NSDictionary *dict3 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusMobile",@"name",@"auto",@"height",cusMobile ,@"content",@"电　话：",@"leftTitle", nil];
         
-        NSDictionary *dict9 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusAddr",@"name",@"auto",@"height", address,@"content",@"地　址：",@"leftTitle", nil];
+        NSDictionary *dict10 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusAddr",@"name",@"auto",@"height", address,@"content",@"地　址：",@"leftTitle", nil];
         
         
         
@@ -1304,7 +1304,11 @@
         salesStr=[NSString stringWithFormat:@"%@(%@)",salesStr_1,salesStr_2];
         
         
-        NSDictionary *dict4 = [NSDictionary dictionaryWithObjectsAndKeys:@"sales",@"name",@"auto",@"height",salesStr,@"content",@"业务员：",@"leftTitle", nil];
+        //4-10增加“司机”字段显示
+        NSDictionary *dict4 = [NSDictionary dictionaryWithObjectsAndKeys:@"driver",@"name",@"auto",@"height",[[appDelegate.boundList_curItemDic objectForKey:@"driver"] isEqualToString:@""]?@"无":[appDelegate.boundList_curItemDic objectForKey:@"driver"],@"content",@"司　机：",@"leftTitle", nil];
+        
+        
+        NSDictionary *dict5 = [NSDictionary dictionaryWithObjectsAndKeys:@"sales",@"name",@"auto",@"height",salesStr,@"content",@"业务员：",@"leftTitle", nil];
         
         
         NSString *sellerStr  =@"";
@@ -1325,12 +1329,12 @@
         sellerStr=[NSString stringWithFormat:@"%@(%@)",sellerStr_1,sellerStr_2];
         
         //NSString *sellerStr = [NSString stringWithFormat:@"%@(%@)",([[_allDataDic objectForKey:@"seller"] isEqualToString:@""] || [_allDataDic objectForKey:@"seller"]==nil)?@"无": [_allDataDic objectForKey:@"seller"],([[_allDataDic objectForKey:@"mobile"] isEqualToString:@""]?@"无":[_allDataDic objectForKey:@"mobile"])];
-        NSDictionary *dict5 = [NSDictionary dictionaryWithObjectsAndKeys:@"seller",@"name",@"auto",@"height",sellerStr,@"content",@"促销员：",@"leftTitle", nil];
+        NSDictionary *dict6 = [NSDictionary dictionaryWithObjectsAndKeys:@"seller",@"name",@"auto",@"height",sellerStr,@"content",@"促销员：",@"leftTitle", nil];
         
-        NSDictionary *dict8 = [NSDictionary dictionaryWithObjectsAndKeys:@"cMeno",@"name",@"auto",@"height",[[appDelegate.boundList_curItemDic objectForKey:@"cMemo"] isEqualToString:@""]?@"无":[appDelegate.boundList_curItemDic objectForKey:@"cMemo"],@"content",@"备　注：",@"leftTitle", nil];
+        NSDictionary *dict9 = [NSDictionary dictionaryWithObjectsAndKeys:@"cMeno",@"name",@"auto",@"height",[[appDelegate.boundList_curItemDic objectForKey:@"cMemo"] isEqualToString:@""]?@"无":[appDelegate.boundList_curItemDic objectForKey:@"cMemo"],@"content",@"备　注：",@"leftTitle", nil];
         
         //添加到最终要显示的数据集合
-        _resultArray = [NSMutableArray arrayWithObjects:dict0,dict1,dict2,dict3,dict4,dict5,dict6, dict7,dict8,dict9,nil];
+        _resultArray = [NSMutableArray arrayWithObjects:dict0,dict1,dict2,dict3,dict4,dict5,dict6, dict7,dict8,dict9,dict10,nil];
         
         //添加商品列表信息
         _productListArry = [[NSMutableArray alloc] init];
@@ -1428,8 +1432,8 @@
         }
         
         
-        NSDictionary *dict10 = [NSDictionary dictionaryWithObjectsAndKeys:@"showButtons",@"name",@"auto",@"height",@"showButtons",@"content",@"按钮组：",@"leftTitle", nil];
-        [_resultArray addObject:dict10];
+        NSDictionary *dict11 = [NSDictionary dictionaryWithObjectsAndKeys:@"showButtons",@"name",@"auto",@"height",@"showButtons",@"content",@"按钮组：",@"leftTitle", nil];
+        [_resultArray addObject:dict11];
         
         [_resultArray retain];
         [_productListArry retain];

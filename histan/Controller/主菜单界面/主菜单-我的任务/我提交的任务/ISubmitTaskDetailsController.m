@@ -1251,8 +1251,10 @@
                         
                     }
                 }
-                //2.重新加载视图
-                [_uiTableView reloadData];
+                
+//                //2.重新加载视图
+//                [_uiTableView reloadData];
+                [self viewWillAppear:YES];
             }
             else
             {
@@ -1344,10 +1346,10 @@
                     
                 }
             }
-            //2.重新加载视图
-            [_uiTableView reloadData];
+//            //2.重新加载视图
+//            [_uiTableView reloadData];
             
-            
+            [self viewWillAppear:YES];
         }
     }];
     //删除失败
@@ -2672,11 +2674,7 @@
                 //如果不需要评分，则直接加载页面数据
                 [_uiTableView reloadData];
             }
-            
-            
-            
-            
-            
+ 
         }
         @catch (NSException *exception) {
             
@@ -2863,7 +2861,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     @try {
-        
+        NSLog(@"%s",__func__);
         //检查附件是否有已经下载过
         for (int i=0; i<[Public_hub count]; i++) {
             NSDictionary *hubDict=(NSDictionary*)[Public_hub objectAtIndex:i];

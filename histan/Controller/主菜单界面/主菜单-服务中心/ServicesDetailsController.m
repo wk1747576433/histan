@@ -172,7 +172,7 @@
     NSLog(@"cell 加载 the dict:%@",dict);
     
     //上半部分信息
-    if (indexPath.row<6) {
+    if (indexPath.row<7) {
         
         UITableViewCell *cell= [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
@@ -216,7 +216,7 @@
             [TaskTypeName_text2 setTextColor:[UIColor redColor]];
         }
         
-        if (indexPath.row==3 || indexPath.row==4) {
+        if (indexPath.row==4 || indexPath.row==5) {
             
             curCellHeight=25;
             
@@ -1160,19 +1160,19 @@
             
             
             //增加“处理人”
-//            NSDictionary *dict1 = [NSDictionary dictionaryWithObjectsAndKeys:@"first_reqdate",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"first_reqdate"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"first_reqdate"],@"content",@"处 理 人：",@"leftTitle", nil];
+            NSDictionary *dict2 = [NSDictionary dictionaryWithObjectsAndKeys:@"handler",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"handler"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"handler"],@"content",@"服务人员：",@"leftTitle", nil];
             
             
-            NSDictionary *dict2 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusname",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"cusname"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"cusname"],@"content",@"顾   　客：",@"leftTitle", nil];
-            NSDictionary *dict3 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusmobile",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"cusmobile"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"cusmobile"],@"content",@"电   　话：",@"leftTitle", nil];
-            NSDictionary *dict4 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusphone",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"cusphone"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"cusphone"],@"content",@"座   　机：",@"leftTitle", nil];
+            NSDictionary *dict3 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusname",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"cusname"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"cusname"],@"content",@"顾   　客：",@"leftTitle", nil];
+            NSDictionary *dict4 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusmobile",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"cusmobile"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"cusmobile"],@"content",@"电   　话：",@"leftTitle", nil];
+            NSDictionary *dict5 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusphone",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"cusphone"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"cusphone"],@"content",@"座   　机：",@"leftTitle", nil];
 
-            NSDictionary *dict5 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusaddr",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"cusaddr"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"cusaddr"],@"content",@"地   　址：",@"leftTitle", nil];
+            NSDictionary *dict6 = [NSDictionary dictionaryWithObjectsAndKeys:@"cusaddr",@"name",@"auto",@"height",[[appDelegate.ServicesDictionary objectForKey:@"cusaddr"] isEqualToString:@""]?@"无":[appDelegate.ServicesDictionary objectForKey:@"cusaddr"],@"content",@"地   　址：",@"leftTitle", nil];
             
             
             
             //先添加到集合
-            _resultArray = [NSMutableArray arrayWithObjects:dict0,dict1,dict2,dict3,dict4,dict5,nil];
+            _resultArray = [NSMutableArray arrayWithObjects:dict0,dict1,dict2,dict3,dict4,dict5,dict6,nil];
             
             //实例化服务详情集合
             _servicesContentArray=[[NSMutableArray alloc]init];
@@ -1219,8 +1219,8 @@
                 i++;
             }
             
-            NSDictionary *dict6 = [NSDictionary dictionaryWithObjectsAndKeys:@"showButtons",@"name",@"auto",@"height",@"showButtons",@"content",@"按钮组：",@"leftTitle", nil];
-            [_resultArray addObject:dict6];
+            NSDictionary *dict7 = [NSDictionary dictionaryWithObjectsAndKeys:@"showButtons",@"name",@"auto",@"height",@"showButtons",@"content",@"按钮组：",@"leftTitle", nil];
+            [_resultArray addObject:dict7];
             
             NSLog(@"%@",_resultArray);
             

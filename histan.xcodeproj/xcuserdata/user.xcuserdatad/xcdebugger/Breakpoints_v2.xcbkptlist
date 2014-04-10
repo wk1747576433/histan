@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "histan/Controller/&#20027;&#33756;&#21333;&#30028;&#38754;/&#29289;&#27969;&#20013;&#24515;/BoundListDetailsViewController.m"
-            timestampString = "417499791.359368"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "635"
-            endingLineNumber = "635"
-            landmarkName = "-alertView:clickedButtonAtIndex:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "histan/Controller/&#20027;&#33756;&#21333;&#30028;&#38754;/&#20027;&#33756;&#21333;-&#25105;&#30340;&#20219;&#21153;/&#25105;&#22788;&#29702;&#30340;&#20219;&#21153;/IDealTaskDetailsController.m"
             timestampString = "415180539.859976"
             startingColumnNumber = "9223372036854775807"
@@ -54,7 +38,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "histan/Controller/&#30331;&#38470;&#30028;&#38754;/LoginViewController.m"
@@ -74,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "histan/Controller/&#20027;&#33756;&#21333;&#30028;&#38754;/&#20027;&#33756;&#21333;-&#25105;&#30340;&#20219;&#21153;/&#25105;&#25552;&#20132;&#30340;&#20219;&#21153;/ISubmitTaskDetailsController.m"
-            timestampString = "418724184.941975"
+            timestampString = "418811124.274227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2472"
-            endingLineNumber = "2472"
+            startingLineNumber = "2474"
+            endingLineNumber = "2474"
             landmarkName = "-requestDidSuccess:"
             landmarkType = "5">
          </BreakpointContent>
@@ -182,11 +166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "histan/Controller/&#20027;&#33756;&#21333;&#30028;&#38754;/&#20027;&#33756;&#21333;-&#25105;&#30340;&#20219;&#21153;/&#25105;&#25552;&#20132;&#30340;&#20219;&#21153;/ISubmitTaskDetailsController.m"
-            timestampString = "418724184.941975"
+            timestampString = "418811124.274227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1596"
-            endingLineNumber = "1596"
+            startingLineNumber = "1598"
+            endingLineNumber = "1598"
             landmarkName = "-upLoadOne:fileContent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -198,11 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "histan/Controller/&#20027;&#33756;&#21333;&#30028;&#38754;/&#20027;&#33756;&#21333;-&#25105;&#30340;&#20219;&#21153;/&#25105;&#25552;&#20132;&#30340;&#20219;&#21153;/ISubmitTaskDetailsController.m"
-            timestampString = "418724184.941975"
+            timestampString = "418811124.274227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2912"
-            endingLineNumber = "2912"
+            startingLineNumber = "2910"
+            endingLineNumber = "2910"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>

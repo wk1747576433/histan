@@ -18,5 +18,6 @@
 @property (retain, nonatomic) IBOutlet UIButton *timeBtn;
 @property (retain, nonatomic) IBOutlet UILabel *phoneLabel2;
 @property (retain, nonatomic) IBOutlet UIImageView *timeImg;
+@property (retain, nonatomic) IBOutlet UILabel *driverLabel;
 
 @end

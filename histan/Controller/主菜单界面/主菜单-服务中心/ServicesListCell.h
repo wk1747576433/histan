@@ -21,4 +21,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *reqidLabel;
 
 @property (retain, nonatomic) IBOutlet UIButton *Services_selectTimeBtn;
+
+@property (retain, nonatomic) IBOutlet UILabel *handlerLabel;
+
 @end

@@ -34,6 +34,7 @@
 
 - (void)dealloc {
     [_reqidLabel release];
+    [_handlerLabel release];
     [super dealloc];
 }
 @end

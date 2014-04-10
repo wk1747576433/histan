@@ -35,6 +35,7 @@
     [_addressLabel release];
     [_timeBtn release];
     [_phoneLabel2 release];
+    [_driverLabel release];
     [super dealloc];
 }
 @end

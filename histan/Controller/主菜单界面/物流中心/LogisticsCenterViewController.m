@@ -695,6 +695,9 @@
             NSString *cusMobile = [itemDic objectForKey:@"cusMobile"];
             NSString *cusAddr = [itemDic objectForKey:@"cusAddr"];
             NSString *flagStr = [NSString stringWithFormat:@"%@",[itemDic objectForKey:@"flag"]];
+            
+            //4-10增加司机字段显示
+            NSString *driverName = [itemDic objectForKey:@"driver"];
  
             UIColor *textColor = [[UIColor alloc] init];
             if ([flagStr isEqualToString:@"0"]) {
@@ -727,6 +730,9 @@
             }
             cell.nameLbel.text = [NSString stringWithFormat:@"%@",cusName];
             cell.addressLabel.text = [NSString stringWithFormat:@"%@",cusAddr];
+            
+            cell.driverLabel.text = driverName;
+            
             
             //显示手机号码
             UnderLineLabel *phoneNumLabel = [[UnderLineLabel alloc] initWithFrame:CGRectMake(2, 2, cell.phoneLabel.frame.size.width-4, cell.phoneLabel.frame.size.height-4)];

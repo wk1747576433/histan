@@ -555,7 +555,7 @@
             cell.selectionStyle=UITableViewCellSelectionStyleGray;
             //得到当前行的数据
             NSDictionary *dict=[_allDataSourceArray objectAtIndex:indexPath.row];
-            //histan_NSLog(@"dict:%@",dict);
+            NSLog(@"dict:%@",dict);
             //时间戳转换
             //            NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
             //            [formatter setDateStyle:NSDateFormatterMediumStyle];
@@ -588,6 +588,17 @@
                 [cell.Services_selectTimeBtn setTitle:[NSString stringWithFormat:@"%@点",[dict objectForKey:@"arrivedtime"]] forState:UIControlStateNormal];
                 [cell.Services_selectTimeBtn setTitleColor:[UIColor colorWithRed:50/255 green:79/255 blue:133/255 alpha:1] forState:UIControlStateNormal];
             }
+            
+            
+            //4-10增加显示服务人字段
+            NSString *handlerName = [dict objectForKey:@"handler"];
+            [cell.handlerLabel setTextColor:[UIColor blackColor]];
+            if (handlerName.length < 1) {
+                handlerName = @"无";
+                [cell.handlerLabel setTextColor:[UIColor blueColor]];
+            }
+            cell.handlerLabel.text = handlerName;
+            
             //显示手机号码
             UnderLineLabel *phoneNumLabel_MobiePhone = [[UnderLineLabel alloc] initWithFrame:CGRectMake(0, 0, cell.Services_MobiePhone.frame.size.width, cell.Services_Phone.frame.size.height)];
             [phoneNumLabel_MobiePhone setText:[dict objectForKey:@"cusmobile"]];
@@ -900,7 +911,7 @@
         //histan_NSLog(@"调用getReturnFromXMLString方法返回的数据：%@",returnString);
         
         NSDictionary *allDic = [soapPacking getDicFromJsonString:returnString];
-        //histan_NSLog(@"allDic --- %@",allDic);
+        NSLog(@"allDic --- %@",allDic);
         //histan_NSLog(@"allDic  objectForKey:@data--- %@",[allDic objectForKey:@"data"]);
         NSString *resultStr = [NSString stringWithFormat:@"%@",[allDic objectForKey:@"data"]];
         if ([resultStr isEqualToString:@""]) {
@@ -917,7 +928,7 @@
         else
         {
             [HUD setHidden:YES];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"修改时间失败！请重试..." delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:resultStr delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
             [alert show];
             [alert release];
         }
