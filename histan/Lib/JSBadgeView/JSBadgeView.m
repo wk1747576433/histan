@@ -176,7 +176,16 @@
 
 - (CGSize)sizeOfTextForCurrentSettings
 {
-    return [self.badgeText sizeWithFont:self.badgeTextFont];
+    @try {
+        return [self.badgeText sizeWithFont:self.badgeTextFont];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%s方法出错！",__FUNCTION__);
+    }
+    @finally {
+        
+    }
+    
 }
 
 #pragma mark - Setters

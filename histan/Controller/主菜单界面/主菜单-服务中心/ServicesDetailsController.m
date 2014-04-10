@@ -434,7 +434,7 @@
         cell.Services_FailedResultSelectText.hidden=YES;
         cell.Services_ChangeDate.hidden=YES;
         cell.Services_ChangeDateLabel.hidden=YES;
-        cell.Services_ChangeDateWhait.hidden=YES;
+        //cell.Services_ChangeDateWhait.hidden=YES;
         cell.Services_FailedReasonLabel.hidden=YES;
         
         
@@ -511,16 +511,17 @@
                 cell.Services_FailedResultSelectText.hidden=NO;
                 cell.Services_ChangeDate.hidden=NO;
                 cell.Services_ChangeDateLabel.hidden=NO;
-                cell.Services_ChangeDateWhait.hidden=NO;
+                //cell.Services_ChangeDateWhait.hidden=NO;
                 
                 cell.Services_ChangeDateWhait.frame=CGRectMake(213,  cell.Services_ChangeDateWhait.frame.origin.y,  cell.Services_ChangeDateWhait.frame.size.width, cell.Services_ChangeDateWhait.frame.size.height);
                 cell.Services_ChangeDate.hidden=NO;
                 [cell.Services_ChangeDateWhait setImage:[UIImage imageNamed:@"ping_checked1_16"] forState:UIControlStateNormal];
-                if([[subDict objectForKey:@"iswhait"] isEqualToString:@"1"]){
-                    cell.Services_ChangeDate.hidden=YES;
-                    [cell.Services_ChangeDateWhait setImage:[UIImage imageNamed:@"ping_checked_16"] forState:UIControlStateNormal];
-                    cell.Services_ChangeDateWhait.frame=CGRectMake(cell.Services_ChangeDateWhait.frame.origin.x-140, cell.Services_ChangeDateWhait.frame.origin.y, cell.Services_ChangeDateWhait.frame.size.width, cell.Services_ChangeDateWhait.frame.size.height);
-                }
+                //判断是否为待定状态
+//                if([[subDict objectForKey:@"iswhait"] isEqualToString:@"1"]){
+//                    //cell.Services_ChangeDate.hidden=YES;
+//                    [cell.Services_ChangeDateWhait setImage:[UIImage imageNamed:@"ping_checked_16"] forState:UIControlStateNormal];
+//                    cell.Services_ChangeDateWhait.frame=CGRectMake(cell.Services_ChangeDateWhait.frame.origin.x-140, cell.Services_ChangeDateWhait.frame.origin.y, cell.Services_ChangeDateWhait.frame.size.width, cell.Services_ChangeDateWhait.frame.size.height);
+//                }
                 
                 if ([[subDict objectForKey:@"resulttext"] isEqualToString:@"null"] || [[subDict objectForKey:@"resulttext"] isEqualToString:@""]) {
                     [cell.Services_FailedResultSelectText setTitle:@"选择失败原因" forState:UIControlStateNormal];
@@ -551,7 +552,7 @@
                 cell.Services_FailedResultSelectText.hidden=YES;
                 cell.Services_ChangeDate.hidden=YES;
                 cell.Services_ChangeDateLabel.hidden=YES;
-                cell.Services_ChangeDateWhait.hidden=YES;
+                //cell.Services_ChangeDateWhait.hidden=YES;
                 cell.Services_FailedReasonLabel.hidden=YES;
             }
             

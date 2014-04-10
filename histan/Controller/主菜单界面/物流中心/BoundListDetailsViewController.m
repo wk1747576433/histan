@@ -544,21 +544,21 @@
                     
                 }
                 else {
-                    //设置待定按钮
-                    NSString *isWait = [productItemDict objectForKey:@"iswait"];
-                    if ([isWait isEqualToString:@"0"] && [appDelegate.curOutBoundStatus isEqualToString:@"1"]) {//未选中状态
-                        cell.retransDateBtn.hidden = NO;
-                        
-                        [cell.waitingBtn setImage:[UIImage imageNamed:@"ping_checked1_16"] forState:UIControlStateNormal];
-                    }
-                    else
-                    {
-                        //待定
-                        cell.retransDateBtn.hidden = YES;
-                        float x = cell.retransDateBtn.frame.origin.x;
-                        [cell.waitingBtn setFrame:CGRectMake(x, cell.waitingBtn.frame.origin.y, cell.waitingBtn.frame.size.width, cell.waitingBtn.frame.size.height)];
-                        [cell.waitingBtn setImage:[UIImage imageNamed:@"ping_checked_16"] forState:UIControlStateNormal];
-                    }
+//                    //设置待定按钮
+//                    NSString *isWait = [productItemDict objectForKey:@"iswait"];
+//                    if ([isWait isEqualToString:@"0"] && [appDelegate.curOutBoundStatus isEqualToString:@"1"]) {//未选中状态
+//                        cell.retransDateBtn.hidden = NO;
+//                        
+//                        [cell.waitingBtn setImage:[UIImage imageNamed:@"ping_checked1_16"] forState:UIControlStateNormal];
+//                    }
+//                    else
+//                    {
+//                        //待定
+//                        cell.retransDateBtn.hidden = YES;
+//                        float x = cell.retransDateBtn.frame.origin.x;
+//                        [cell.waitingBtn setFrame:CGRectMake(x, cell.waitingBtn.frame.origin.y, cell.waitingBtn.frame.size.width, cell.waitingBtn.frame.size.height)];
+//                        [cell.waitingBtn setImage:[UIImage imageNamed:@"ping_checked_16"] forState:UIControlStateNormal];
+//                    }
                 }
                 
             }
@@ -893,7 +893,7 @@
     //如果原先不是待定，则改为待定
     if(![isWait isEqualToString:@"1"]){
         iswait=@"1";
-        subCell.retransDateBtn.hidden=YES;
+        //subCell.retransDateBtn.hidden=YES;
         [sender setImage:[UIImage imageNamed:@"ping_checked_16"] forState:UIControlStateNormal];
         
         sender.frame=CGRectMake(subCell.waitingBtn.frame.origin.x-140, subCell.waitingBtn.frame.origin.y, subCell.waitingBtn.frame.size.width, subCell.waitingBtn.frame.size.height);
@@ -905,7 +905,7 @@
     else  //原先为待定，则改为不待定
     {
         iswait=@"0";
-        subCell.retransDateBtn.hidden=NO;
+        //subCell.retransDateBtn.hidden=NO;
         [sender setImage:[UIImage imageNamed:@"ping_checked1_16"] forState:UIControlStateNormal];
         
         sender.frame=CGRectMake(subCell.waitingBtn.frame.origin.x, subCell.waitingBtn.frame.origin.y, subCell.waitingBtn.frame.size.width, subCell.waitingBtn.frame.size.height);

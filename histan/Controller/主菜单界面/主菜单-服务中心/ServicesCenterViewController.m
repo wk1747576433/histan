@@ -555,7 +555,7 @@
             cell.selectionStyle=UITableViewCellSelectionStyleGray;
             //得到当前行的数据
             NSDictionary *dict=[_allDataSourceArray objectAtIndex:indexPath.row];
-            NSLog(@"dict:%@",dict);
+            //NSLog(@"dict:%@",dict);
             //时间戳转换
             //            NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
             //            [formatter setDateStyle:NSDateFormatterMediumStyle];
@@ -571,7 +571,7 @@
             cell.Services_Phone.text=@"";
             
             //服务列表项的reqid，便于修改预约时间
-            NSLog(@"加载cell时reqid：%@",[dict objectForKey:@"reqid"]);
+            //NSLog(@"加载cell时reqid：%@",[dict objectForKey:@"reqid"]);
             cell.reqidLabel.text = [dict objectForKey:@"reqid"];
             //新增加预约时间显示和选择按钮
             //添加选择时间事件
@@ -713,7 +713,7 @@
         cellView = (ServicesListCell *)[_currentBtn superview].superview;
     }
     
-    NSLog(@"记录时reqid：%@",cellView.reqidLabel.text);
+    //NSLog(@"记录时reqid：%@",cellView.reqidLabel.text);
     _currentReqid = cellView.reqidLabel.text;
     [_currentReqid retain];
     
@@ -895,7 +895,7 @@
     HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [HUD setLabelText:@"正在修改时间..."];
     
-    NSLog(@"参数：%@，%@，%@",_currentReqid,_curSelectDate,_selectedTime);
+    //NSLog(@"参数：%@，%@，%@",_currentReqid,_curSelectDate,_selectedTime);
     //初始化参数数组（必须是可变数组）
     NSMutableArray *wsParas=[[NSMutableArray alloc] initWithObjects:@"SID",appDelegate.SID,@"reqid",_currentReqid,@"reservetime",_curSelectDate,@"arrivedtime",_selectedTime,nil];
     NSLog(@"参数数组：%@",wsParas);
@@ -911,7 +911,7 @@
         //histan_NSLog(@"调用getReturnFromXMLString方法返回的数据：%@",returnString);
         
         NSDictionary *allDic = [soapPacking getDicFromJsonString:returnString];
-        NSLog(@"allDic --- %@",allDic);
+        //NSLog(@"allDic --- %@",allDic);
         //histan_NSLog(@"allDic  objectForKey:@data--- %@",[allDic objectForKey:@"data"]);
         NSString *resultStr = [NSString stringWithFormat:@"%@",[allDic objectForKey:@"data"]];
         if ([resultStr isEqualToString:@""]) {

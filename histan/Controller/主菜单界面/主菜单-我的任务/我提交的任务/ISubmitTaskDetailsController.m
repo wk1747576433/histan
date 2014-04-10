@@ -203,7 +203,26 @@
 {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     NSLog(@"第%d个cell的高度是:%f",indexPath.row,cell.frame.size.height);
-    return cell.frame.size.height;
+    NSInteger cellNum = indexPath.row;
+    float height = 0;
+    if (cellNum == 7) {
+        int hubCount = 0;
+        for (int i=0; i<[_resultArray count]; i++) {
+            NSDictionary *itemDic = [_resultArray objectAtIndex:i];
+            if ([[itemDic objectForKey:@"name"] isEqualToString:@"TaskDesc"]) {
+                //找到了描述面板的字典
+                NSMutableArray *hubArray = [itemDic objectForKey:@"content"];
+                hubCount = [hubArray count];
+                break;
+            }
+        }
+        height = 125+40*hubCount;
+    }
+    else
+    {
+        height = cell.frame.size.height;
+    }
+    return height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -221,10 +240,6 @@
         float curCellHeight=40;
         
         NSDictionary *dict = [_resultArray objectAtIndex:indexPath.row];
-        
-        
-        //得到附件记录
-        NSArray *fujianArray = [dict objectForKey:@"content"];
         
         CGRect cellFrame = [cell frame];
         cellFrame.origin = CGPointMake(100, 2);
@@ -1252,9 +1267,8 @@
                     }
                 }
                 
-//                //2.重新加载视图
-//                [_uiTableView reloadData];
-                [self viewWillAppear:YES];
+                //2.重新加载视图
+                [_uiTableView reloadData];
             }
             else
             {
@@ -1346,10 +1360,9 @@
                     
                 }
             }
-//            //2.重新加载视图
-//            [_uiTableView reloadData];
+            //2.重新加载视图
+            [_uiTableView reloadData];
             
-            [self viewWillAppear:YES];
         }
     }];
     //删除失败
