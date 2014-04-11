@@ -114,7 +114,7 @@
                         </state>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="button2_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="295">
-                        <rect key="frame" x="147" y="21" width="30" height="21"/>
+                        <rect key="frame" x="130" y="21" width="30" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="单号：" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="43" translatesAutoresizingMaskIntoConstraints="NO" id="385">
@@ -159,14 +159,14 @@
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="司机：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcq-gU-c5i">
-                        <rect key="frame" x="182" y="24" width="42" height="15"/>
+                        <rect key="frame" x="159" y="24" width="42" height="15"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sj9-Ev-qsk">
-                        <rect key="frame" x="224" y="21" width="66" height="21"/>
+                        <rect key="frame" x="204" y="21" width="66" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="66" id="xuQ-Hg-NB9"/>
@@ -179,7 +179,6 @@
                     <constraint firstItem="Wcq-gU-c5i" firstAttribute="centerY" secondItem="295" secondAttribute="centerY" id="4AL-LG-YT1"/>
                     <constraint firstItem="283" firstAttribute="top" secondItem="295" secondAttribute="top" id="5AM-Zd-uIz"/>
                     <constraint firstItem="283" firstAttribute="top" secondItem="Sj9-Ev-qsk" secondAttribute="top" id="8UG-oh-vae"/>
-                    <constraint firstItem="Sj9-Ev-qsk" firstAttribute="trailing" secondItem="43" secondAttribute="trailing" id="TlP-CK-UlO"/>
                     <constraint firstItem="295" firstAttribute="leading" secondItem="46" secondAttribute="trailing" constant="65" id="Twr-lR-LFr"/>
                     <constraint firstItem="Wcq-gU-c5i" firstAttribute="top" secondItem="43" secondAttribute="bottom" constant="2" id="WGZ-vg-jCR"/>
                     <constraint firstItem="283" firstAttribute="bottom" secondItem="Sj9-Ev-qsk" secondAttribute="bottom" id="gRd-yu-BSk"/>
@@ -188,7 +187,6 @@
                     <constraint firstItem="283" firstAttribute="baseline" secondItem="Wcq-gU-c5i" secondAttribute="baseline" id="q1q-aX-URq"/>
                     <constraint firstItem="283" firstAttribute="leading" secondItem="46" secondAttribute="trailing" id="qSt-Bj-c6U"/>
                     <constraint firstItem="Sj9-Ev-qsk" firstAttribute="leading" secondItem="Wcq-gU-c5i" secondAttribute="trailing" id="rMv-1a-3UB"/>
-                    <constraint firstItem="Wcq-gU-c5i" firstAttribute="leading" secondItem="283" secondAttribute="trailing" id="sM5-CR-nuZ"/>
                     <constraint firstItem="Wcq-gU-c5i" firstAttribute="leading" secondItem="295" secondAttribute="trailing" constant="5" id="xoB-vx-DX8"/>
                     <constraint firstItem="283" firstAttribute="bottom" secondItem="295" secondAttribute="bottom" id="y6G-x1-9VL"/>
                 </constraints>

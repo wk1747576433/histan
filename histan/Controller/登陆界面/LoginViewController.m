@@ -652,7 +652,7 @@
                 
                 //默认加载第一个地址
                 //改变当前系统的服务器路径
-                NSDictionary *dict=(NSDictionary*)[_WebServiceArray objectAtIndex:0];
+                NSDictionary *dict=(NSDictionary*)[_WebServiceArray objectAtIndex:1];
                 _showServiceLabel.text=[NSString stringWithFormat:@"服务器：%@",[dict objectForKey:@"name"]];
                 
                 //赋值
