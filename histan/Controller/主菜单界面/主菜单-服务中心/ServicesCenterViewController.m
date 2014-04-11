@@ -167,7 +167,7 @@
     //兼容ios 7 的高度
     float _subHeight=124;
     if (_IsIOS7_) {
-        _subHeight=130;
+        _subHeight=138;
     }
     
     //添加 table view
@@ -585,8 +585,16 @@
             }
             else
             {
-                [cell.Services_selectTimeBtn setTitle:[NSString stringWithFormat:@"%@点",[dict objectForKey:@"arrivedtime"]] forState:UIControlStateNormal];
-                [cell.Services_selectTimeBtn setTitleColor:[UIColor colorWithRed:50/255 green:79/255 blue:133/255 alpha:1] forState:UIControlStateNormal];
+                //arrivedtime返回值在选择过去的时间时为空
+                if (arrivedtimeStr.length < 1) {
+                    [cell.Services_selectTimeBtn setTitle:[NSString stringWithFormat:@"null"] forState:UIControlStateNormal];
+                    [cell.Services_selectTimeBtn setTitleColor:[UIColor colorWithRed:50/255 green:79/255 blue:133/255 alpha:1] forState:UIControlStateNormal];
+                }
+                else
+                {
+                    [cell.Services_selectTimeBtn setTitle:[NSString stringWithFormat:@"%@点",[dict objectForKey:@"arrivedtime"]] forState:UIControlStateNormal];
+                    [cell.Services_selectTimeBtn setTitleColor:[UIColor colorWithRed:50/255 green:79/255 blue:133/255 alpha:1] forState:UIControlStateNormal];
+                }
             }
             
             

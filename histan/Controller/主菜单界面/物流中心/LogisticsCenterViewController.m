@@ -156,14 +156,14 @@
 //    if (_IsIOS7_) {
 //        _subHeight=128;
 //    }
+    
+    CGRect r_cg=mainScreen_CGRect;
     //添加 table view
-    _uiTableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 80, self.view.frame.size.width, self.view.frame.size.height-123) style:UITableViewStylePlain];
+    _uiTableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 80, self.view.frame.size.width, r_cg.size.height-123) style:UITableViewStylePlain];
     [_uiTableView setBackgroundColor:[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0]];
     [_uiTableView setDelegate:self];
     [_uiTableView setDataSource:self];
     [self.view addSubview:_uiTableView];
-    
-    CGRect r_cg=mainScreen_CGRect;
     
     //添加一个日期选择器，先隐藏
     _maskView = [[UIView alloc] initWithFrame:CGRectMake(0,r_cg.size.height, 320, 300)];

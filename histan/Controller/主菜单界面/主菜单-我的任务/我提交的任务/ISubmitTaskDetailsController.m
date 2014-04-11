@@ -205,7 +205,8 @@
     NSLog(@"第%d个cell的高度是:%f",indexPath.row,cell.frame.size.height);
     NSInteger cellNum = indexPath.row;
     float height = 0;
-    if (cellNum == 7) {
+    //如果是未完成状态并且是附件列表显示cell，手动调节cell高度
+    if (cellNum == 7 && _curTaskTypeId == 0) {
         int hubCount = 0;
         for (int i=0; i<[_resultArray count]; i++) {
             NSDictionary *itemDic = [_resultArray objectAtIndex:i];

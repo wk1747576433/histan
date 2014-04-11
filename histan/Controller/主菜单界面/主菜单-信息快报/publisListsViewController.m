@@ -39,7 +39,7 @@
     _tableView = [[UITableView alloc] init];
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    [_tableView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-40)];
+    [_tableView setFrame:CGRectMake(0, 0, self.view.frame.size.width, mainScreen_CGRect.size.height-40)];
     [self.view addSubview:_tableView];
     
     //调用获取公告信息方法

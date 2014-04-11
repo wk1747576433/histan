@@ -86,7 +86,9 @@
     [imgv setBackgroundColor:[UIColor whiteColor]];
     
     //添加 table view
-    _uiTableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height-40) style:UITableViewStylePlain];
+    CGRect r_cg=mainScreen_CGRect;
+
+    _uiTableView=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, r_cg.size.height-40) style:UITableViewStylePlain];
     [_uiTableView setDelegate:self];
     [_uiTableView setDataSource:self];
     [_uiTableView setBackgroundColor:[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0]];
@@ -142,35 +144,35 @@
         float margintop=0;
         if (indexPath.row==0) //第一个cell，显示 标题，发布人等信息
         {
-            UILabel *titleLbl=[[UILabel alloc]initWithFrame:CGRectMake(5, 2, self.view.frame.size.width-10,40)];
+            UILabel *titleLbl=[[UILabel alloc]initWithFrame:CGRectMake(5, 2, mainScreen_CGRect.size.width-10,40)];
             titleLbl.text=noticesName;
             titleLbl.font=[UIFont boldSystemFontOfSize:16.0f];
             titleLbl.lineBreakMode = UILineBreakModeWordWrap;
             titleLbl.highlightedTextColor = [UIColor whiteColor];
             titleLbl.numberOfLines =0;
             //重新设置 label 的高度、
-            titleLbl.frame= CGRectMake(5, 2, self.view.frame.size.width-10, titleLbl.frame.size.height);
+            titleLbl.frame= CGRectMake(5, 2, mainScreen_CGRect.size.width-10, titleLbl.frame.size.height);
             [titleLbl sizeToFit];
             [cell.contentView addSubview:titleLbl];
             
             margintop=titleLbl.frame.size.height+2;
             
-            UILabel *publishDeptLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, margintop, self.view.frame.size.width-10, 18)];
+            UILabel *publishDeptLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, margintop, mainScreen_CGRect.size.width-10, 18)];
             [publishDeptLabel setText:[NSString stringWithFormat:@"发布部门：%@",publishDept]];
             publishDeptLabel.font=[UIFont systemFontOfSize:14.0f];
             [cell.contentView addSubview:publishDeptLabel];
             
-            UILabel *publisherLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, margintop+19, self.view.frame.size.width-10, 18)];
+            UILabel *publisherLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, margintop+19, mainScreen_CGRect.size.width-10, 18)];
             [publisherLabel setText:[NSString stringWithFormat:@"发布人：%@",publisher]];
             publisherLabel.font=[UIFont systemFontOfSize:14.0f];
             [cell.contentView addSubview:publisherLabel];
             
-            UILabel *publishTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, margintop+19+19, self.view.frame.size.width-10, 18)];
+            UILabel *publishTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, margintop+19+19, mainScreen_CGRect.size.width-10, 18)];
             [publishTimeLabel setText:[NSString stringWithFormat:@"发布于：%@",publishTime]];
             publishTimeLabel.font=[UIFont systemFontOfSize:14.0f];
             [cell.contentView addSubview:publishTimeLabel];
             
-            UILabel *approveManLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, margintop+19+19+19, self.view.frame.size.width-10, 18)];
+            UILabel *approveManLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, margintop+19+19+19, mainScreen_CGRect.size.width-10, 18)];
             [approveManLabel setText:[NSString stringWithFormat:@"审批人：%@",approveMan]];
             //            [approveManLabel.layer setBorderWidth:2];
             //            [approveManLabel.layer setBorderColor:[UIColor grayColor].CGColor];
@@ -190,7 +192,7 @@
             docView.delegate = self;
             [docView loadHTMLString:content baseURL:nil];
             [cell.contentView addSubview:docView];
-            
+            [cell.contentView setUserInteractionEnabled:NO];
             curCellHeight=webViewHeight+10;
             ////histan_NSLog(@"curCellHeight:%f",curCellHeight);
             
@@ -207,7 +209,7 @@
                     //得到附件信息。
                     NSDictionary *hubDicts=[downloadArray objectAtIndex:i];
                     NSString *fileStr = [appendArray objectAtIndex:i];
-                    UILabel *upFileLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 2+40*i, self.view.frame.size.width - 10-90, 40)];
+                    UILabel *upFileLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 2+40*i, mainScreen_CGRect.size.width - 10-90, 40)];
                     upFileLabel.userInteractionEnabled = YES;
                     upFileLabel.font = [UIFont systemFontOfSize:14.0f];
                     [upFileLabel setLineBreakMode:UILineBreakModeMiddleTruncation];
@@ -240,7 +242,7 @@
             
         }
         
-        cellFrame.size.height=curCellHeight+2;
+        cellFrame.size.height=curCellHeight+10;
         [cell setFrame:cellFrame];
 
     return cell;
@@ -259,7 +261,7 @@
     }
     else
     {
-        webViewHeight = [strHeight floatValue];
+        webViewHeight = [strHeight floatValue]+10;
 //        if (webViewHeight > 300) {
 //            webViewHeight = 300;
 //        }

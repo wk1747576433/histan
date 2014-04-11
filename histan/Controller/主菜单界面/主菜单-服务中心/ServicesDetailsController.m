@@ -168,8 +168,8 @@
     float curCellHeight=40;
     
     NSDictionary *dict = [_resultArray objectAtIndex:indexPath.row];
-    NSLog(@"cell 加载 the _resultArray:%@",_resultArray);
-    NSLog(@"cell 加载 the dict:%@",dict);
+//    NSLog(@"cell 加载 the _resultArray:%@",_resultArray);
+//    NSLog(@"cell 加载 the dict:%@",dict);
     
     //上半部分信息
     if (indexPath.row<7) {
@@ -404,14 +404,17 @@
         [cell.Services_FailedResultSelectText addTarget:self action:@selector(failedReasonBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         if ([appDelegate.CurTaskTypeId isEqualToString:@"1"]) {
             
-        }else{
-            [cell.Services_FailedResultSelectText setBackgroundImage:nil forState:UIControlStateNormal];
-            [cell.Services_FailedResultSelectText setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
-            cell.Services_FailedResultSelectText.layer.borderColor=[[UIColor grayColor]CGColor];
-            cell.Services_FailedResultSelectText.layer.borderWidth=1;
             
-            //cell.Services_ResetCancelBtn.hidden=NO;
+            
+        }else{
+            //开启这里之后，在失败状态下，选择失败原因按钮没有了背景图
+//            [cell.Services_FailedResultSelectText setBackgroundImage:nil forState:UIControlStateNormal];
+//            [cell.Services_FailedResultSelectText setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+//            cell.Services_FailedResultSelectText.layer.borderColor=[[UIColor grayColor]CGColor];
+//            cell.Services_FailedResultSelectText.layer.borderWidth=1;
+            
             cell.Services_ResetBtn.hidden=NO;
+            
             
         }
         
@@ -503,7 +506,7 @@
                 if ([appDelegate.CurTaskTypeId  isEqualToString:@"1"]) {
                     curCellHeight=[[subDict objectForKey:@"height"]floatValue]+10;
                 }else{
-                    curCellHeight=[[subDict objectForKey:@"height"]floatValue]+descriptionLabelHeight-10;
+                    curCellHeight=[[subDict objectForKey:@"height"]floatValue]+descriptionLabelHeight+15;
                 }
                 
                 [cell.Services_FailedBtn setImage:[UIImage imageNamed:@"ping_radio_16"] forState:UIControlStateNormal];
@@ -514,14 +517,13 @@
                 //cell.Services_ChangeDateWhait.hidden=NO;
                 
                 cell.Services_ChangeDateWhait.frame=CGRectMake(213,  cell.Services_ChangeDateWhait.frame.origin.y,  cell.Services_ChangeDateWhait.frame.size.width, cell.Services_ChangeDateWhait.frame.size.height);
-                cell.Services_ChangeDate.hidden=NO;
                 [cell.Services_ChangeDateWhait setImage:[UIImage imageNamed:@"ping_checked1_16"] forState:UIControlStateNormal];
                 //判断是否为待定状态
-//                if([[subDict objectForKey:@"iswhait"] isEqualToString:@"1"]){
-//                    //cell.Services_ChangeDate.hidden=YES;
+                if([[subDict objectForKey:@"iswhait"] isEqualToString:@"1"]){
+//                    cell.Services_ChangeDate.hidden=YES;
 //                    [cell.Services_ChangeDateWhait setImage:[UIImage imageNamed:@"ping_checked_16"] forState:UIControlStateNormal];
 //                    cell.Services_ChangeDateWhait.frame=CGRectMake(cell.Services_ChangeDateWhait.frame.origin.x-140, cell.Services_ChangeDateWhait.frame.origin.y, cell.Services_ChangeDateWhait.frame.size.width, cell.Services_ChangeDateWhait.frame.size.height);
-//                }
+                }
                 
                 if ([[subDict objectForKey:@"resulttext"] isEqualToString:@"null"] || [[subDict objectForKey:@"resulttext"] isEqualToString:@""]) {
                     [cell.Services_FailedResultSelectText setTitle:@"选择失败原因" forState:UIControlStateNormal];
@@ -552,8 +554,8 @@
                 cell.Services_FailedResultSelectText.hidden=YES;
                 cell.Services_ChangeDate.hidden=YES;
                 cell.Services_ChangeDateLabel.hidden=YES;
-                //cell.Services_ChangeDateWhait.hidden=YES;
-                cell.Services_FailedReasonLabel.hidden=YES;
+                cell.Services_ChangeDateWhait.hidden=YES;
+                //cell.Services_FailedReasonLabel.hidden=YES;
             }
             
             
