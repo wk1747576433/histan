@@ -176,8 +176,8 @@
 
 - (CGSize)sizeOfTextForCurrentSettings
 {
-    //return [self.badgeText sizeWithFont:self.badgeTextFont];
-    return [self.badgeText sizeWithAttributes:@{NSFontAttributeName:self.badgeTextFont}];
+    return [self.badgeText sizeWithFont:self.badgeTextFont];
+    //return [self.badgeText sizeWithAttributes:@{NSFontAttributeName:self.badgeTextFont}];
     
 }
 

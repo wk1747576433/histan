@@ -463,11 +463,10 @@
                     
                     UILabel *hubNameLblTitle=[[UILabel alloc]initWithFrame:CGRectMake(0, 2, self.view.frame.size.width-170,21)];
                     hubNameLblTitle.text=[hubDict objectForKey:@"attach_name"];
-                    hubNameLblTitle.font=[UIFont systemFontOfSize:12.0f];
+                    hubNameLblTitle.font=[UIFont systemFontOfSize:10.0f];
                     hubNameLblTitle.lineBreakMode = UILineBreakModeWordWrap;
                     hubNameLblTitle.highlightedTextColor = [UIColor whiteColor];
                     hubNameLblTitle.numberOfLines =0;
-                    
                     CGRect rect2=CGRectMake(3, 2, self.view.frame.size.width-175, hubNameLblTitle.frame.size.height);
                     hubNameLblTitle.frame = rect2;
                     [hubNameLblTitle sizeToFit];
