@@ -95,9 +95,7 @@
         [self.view setBackgroundColor:[UIColor whiteColor]];
         
         self.navigationItem.title=@"下载中心";
-        
-        
-        
+
         //在导航右侧加入 返回首页按钮
         rightbutton_backindex=[[UIBarButtonItem alloc]init];
         rightbutton_backindex.tag=-1;
@@ -154,20 +152,20 @@
         
         
         //添加 table view
-        _uiTableView_DownLoadFinished=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-80) style:UITableViewStylePlain];
+        _uiTableView_DownLoadFinished=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, mainScreen_CGRect.size.height-80) style:UITableViewStylePlain];
         [_uiTableView_DownLoadFinished setBackgroundColor:[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0]];
         [_uiTableView_DownLoadFinished setDelegate:self];
         [_uiTableView_DownLoadFinished setDataSource:self];
         [_uiTableView_DownLoadFinished setTag:102];
         
-        _uiTableView_DownLoading=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-80) style:UITableViewStylePlain];
+        _uiTableView_DownLoading=[[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, mainScreen_CGRect.size.height-80) style:UITableViewStylePlain];
         [_uiTableView_DownLoading setBackgroundColor:[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0]];
         [_uiTableView_DownLoading setDelegate:self];
         [_uiTableView_DownLoading setDataSource:self];
         [_uiTableView_DownLoading setTag:101];
         
         
-        UIView *uiview=[[UIView alloc]initWithFrame:CGRectMake(0, 40, 320, self.view.frame.size.height-80)];
+        UIView *uiview=[[UIView alloc]initWithFrame:CGRectMake(0, 40, 320, mainScreen_CGRect.size.height-80)];
         [uiview setTag:103];
         [self.view addSubview:uiview];
         
@@ -541,7 +539,6 @@
         
         cell.down_Title.text=fileInfo.fileName;
         cell.down_Schedule.text=[CommonHelper getFileSizeString:fileInfo.fileSize];
-        
         CALayer *menuBorder=[cell.down_Img layer];
         [menuBorder setBorderWidth:1.0];
         [menuBorder setBorderColor:[UIColor colorWithRed:0.84 green:0.84 blue:0.84 alpha:1.0].CGColor];

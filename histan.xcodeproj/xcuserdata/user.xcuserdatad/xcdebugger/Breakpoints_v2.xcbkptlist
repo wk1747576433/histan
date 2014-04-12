@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "histan/Controller/&#20027;&#33756;&#21333;&#30028;&#38754;/&#20027;&#33756;&#21333;-&#25105;&#30340;&#20219;&#21153;/&#25105;&#25552;&#20132;&#30340;&#20219;&#21153;/ISubmitTaskDetailsController.m"
-            timestampString = "418880105.911526"
+            timestampString = "418979900.811116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2488"
-            endingLineNumber = "2488"
+            startingLineNumber = "2515"
+            endingLineNumber = "2515"
             landmarkName = "-requestDidSuccess:"
             landmarkType = "5">
          </BreakpointContent>
@@ -182,11 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "histan/Controller/&#20027;&#33756;&#21333;&#30028;&#38754;/&#20027;&#33756;&#21333;-&#25105;&#30340;&#20219;&#21153;/&#25105;&#25552;&#20132;&#30340;&#20219;&#21153;/ISubmitTaskDetailsController.m"
-            timestampString = "418880105.911526"
+            timestampString = "418979900.811116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2924"
-            endingLineNumber = "2924"
+            startingLineNumber = "2951"
+            endingLineNumber = "2951"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>
@@ -285,6 +285,142 @@
             endingLineNumber = "713"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "histan/BLL/CommonHelper.m"
+            timestampString = "418977758.33412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "+getFileSizeNumber:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[CommonHelper getFileSizeNumber:]"
+                  moduleName = "histan"
+                  urlString = "file://localhost/Users/user/Desktop/histan%E5%89%AF%E6%9C%AC/histan/BLL/CommonHelper.m"
+                  timestampString = "418977035.247139"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[CommonHelper getFileSizeNumber:]"
+                  moduleName = "histan"
+                  urlString = "file://localhost/Users/user/Desktop/histan%E5%89%AF%E6%9C%AC/histan/BLL/CommonHelper.m"
+                  timestampString = "418977035.24734"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[CommonHelper getFileSizeNumber:]"
+                  moduleName = "histan"
+                  urlString = "file://localhost/Users/user/Desktop/histan%E5%89%AF%E6%9C%AC/histan/BLL/CommonHelper.m"
+                  timestampString = "418977035.247548"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "358">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "histan/BLL/CommonHelper.m"
+            timestampString = "418977758.33412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "+notRounding:afterPoint:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "histan/BLL/CommonHelper.m"
+            timestampString = "418977758.33412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "+getFileSizeString:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[CommonHelper getFileSizeString:]"
+                  moduleName = "histan"
+                  urlString = "file://localhost/Users/user/Desktop/histan%E5%89%AF%E6%9C%AC/histan/BLL/CommonHelper.m"
+                  timestampString = "418977035.247976"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[CommonHelper getFileSizeString:]"
+                  moduleName = "histan"
+                  urlString = "file://localhost/Users/user/Desktop/histan%E5%89%AF%E6%9C%AC/histan/BLL/CommonHelper.m"
+                  timestampString = "418977035.248739"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "497">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[CommonHelper getFileSizeString:]"
+                  moduleName = "histan"
+                  urlString = "file://localhost/Users/user/Desktop/histan%E5%89%AF%E6%9C%AC/histan/BLL/CommonHelper.m"
+                  timestampString = "418977035.249065"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "507">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

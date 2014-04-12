@@ -78,10 +78,10 @@
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZA-wP-NMh">
-                        <rect key="frame" x="56" y="23" width="88" height="23"/>
+                        <rect key="frame" x="56" y="23" width="75" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="Button">
+                        <state key="normal" title="Button" backgroundImage="select_item_bg.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -116,4 +116,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="select_item_bg.png" width="314" height="42"/>
+    </resources>
 </document>

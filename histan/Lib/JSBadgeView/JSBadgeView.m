@@ -176,15 +176,8 @@
 
 - (CGSize)sizeOfTextForCurrentSettings
 {
-    @try {
-        return [self.badgeText sizeWithFont:self.badgeTextFont];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"%s方法出错！",__FUNCTION__);
-    }
-    @finally {
-        
-    }
+    //return [self.badgeText sizeWithFont:self.badgeTextFont];
+    return [self.badgeText sizeWithAttributes:@{NSFontAttributeName:self.badgeTextFont}];
     
 }
 

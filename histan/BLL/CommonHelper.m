@@ -28,36 +28,27 @@
 
 +(NSString *)getFileSizeString:(NSString *)size
 {
+    //这个方法貌似有问题...返回的数据大小都是以B为单位，而且很小（比如0.35B）
+    //2014-04-12日修改了下，虽然显示的时候显示比较正常了...但是这里的原因不是很清楚！
     @try {
-        
-        
+
         NSString *retStr=@"";
         NSString *curSize=@"";
-        if([size floatValue]>=1024*1024)//大于1M，则转化成M单位的字符串
-        {
-            curSize= [self notRounding:[size floatValue]/1024/1024 afterPoint:2];
-            retStr= [NSString stringWithFormat:@"%@M",curSize];
-            
-            //retStr=[NSString stringWithFormat:@"%fM",[size floatValue]/1024/1024];
-            
-        }
-        else if([size floatValue]>=1024&&[size floatValue]<1024*1024) //不到1M,但是超过了1KB，则转化成KB单位
-        {
-            curSize=[self notRounding:[size floatValue]/1024 afterPoint:2];
-            retStr= [NSString stringWithFormat:@"%@K",curSize];
-            
-            //retStr=[NSString stringWithFormat:@"%fK",[size floatValue]/1024];;
-        }
-        else//剩下的都是小于1K的，则转化成B单位
-        {
+        
+        if ([size floatValue]<1024) {
             curSize=[self notRounding:[size floatValue] afterPoint:2];
-            retStr= [NSString stringWithFormat:@"%@B",curSize];
-            
-            //retStr=[NSString stringWithFormat:@"%fB",[size floatValue]];
-            
+            retStr= [NSString stringWithFormat:@"%@K",curSize];
+        }
+        if ([size floatValue]>=1024 && [size floatValue]<1024*1024) {
+            curSize = [self notRounding:[size floatValue]/1024 afterPoint:2];
+            retStr= [NSString stringWithFormat:@"%@M",curSize];
+        }
+        if ([size floatValue]>=1024*1024) {
+            curSize=[self notRounding:[size floatValue]/1024/1024 afterPoint:2];
+            retStr= [NSString stringWithFormat:@"%@",curSize];
         }
         
-        ////ZNV //histan_NSLog(@"aaaaaaaaa:%@",retStr);
+        //histan_NSLog(@"aaaaaaaaa:%@",retStr);
         return retStr;
     }
     @catch (NSException *exception) {

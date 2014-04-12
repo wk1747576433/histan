@@ -1774,6 +1774,14 @@
         
         UIImage *image = [UIImage imageWithContentsOfFile:filePath];
         
+        //得到图片文件大小
+        long imageSize = 0;
+        NSFileManager *manager = [NSFileManager defaultManager];
+        if ([manager fileExistsAtPath:filePath]) {
+            imageSize = [[manager attributesOfItemAtPath:filePath error:nil] fileSize]/1024;//单位为KB
+            NSLog(@"图片原始大小：%luKB",imageSize);
+        }
+        
         //压缩图片
         CGSize imagesize = image.size;//相片的尺寸
         //限制尺寸
@@ -1790,7 +1798,23 @@
             image = [self imageWithImage:image scaledToSize:imagesize];
         }
         
-        NSData *contentData = UIImageJPEGRepresentation(image, 0.1);
+        //如果图片大于400kb,压缩
+        NSData *contentData = nil;
+        if (imageSize > 400) {
+            contentData = UIImageJPEGRepresentation(image, 0.1);
+        }
+        else
+        {
+            if (imageSize > 50) {
+                contentData = UIImageJPEGRepresentation(image, 0.3);
+            }
+            else
+            {
+                contentData = UIImageJPEGRepresentation(image, 0.8);
+            }
+        }
+
+        
         //将内容加密
         contents = [[NSString alloc] initWithData:[GTMBase64 encodeData:contentData] encoding:NSUTF8StringEncoding];
         //返回加密后的字符串
